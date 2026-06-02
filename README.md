@@ -16,7 +16,7 @@ npx skills add https://github.com/jesuspb2/ghostfolio-skill
 Then configure credentials:
 
 ```bash
-cp ~/.agents/skills/ghostfolio-skill/scripts/.env.example ~/.agents/skills/ghostfolio-skill/scripts/.env
+cp ~/.agents/skills/ghostfolio/scripts/.env.example ~/.agents/skills/ghostfolio/scripts/.env
 ```
 
 Edit `.env`:

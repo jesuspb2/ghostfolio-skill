@@ -15,7 +15,7 @@ Use this skill to answer questions about the user's Ghostfolio instance and to p
 All config is read from a `.env` file at:
 
 ```
-~/.agents/skills/ghostfolio-skill/scripts/.env
+~/.agents/skills/ghostfolio/scripts/.env
 ```
 
 Required keys:
@@ -30,7 +30,7 @@ Optional keys:
 All operations go through the Python CLI:
 
 ```bash
-python3 ~/.agents/skills/ghostfolio-skill/scripts/ghostfolio.py <command> [options]
+python3 ~/.agents/skills/ghostfolio/scripts/ghostfolio.py <command> [options]
 ```
 
 ## Commands
@@ -39,34 +39,34 @@ python3 ~/.agents/skills/ghostfolio-skill/scripts/ghostfolio.py <command> [optio
 
 ```bash
 # Verify connection
-python3 ~/.agents/skills/ghostfolio-skill/scripts/ghostfolio.py auth
+python3 ~/.agents/skills/ghostfolio/scripts/ghostfolio.py auth
 
 # Portfolio performance (ranges: 1d 1w 1m 3m 6m ytd 1y 2y 3y 5y max)
-python3 ~/.agents/skills/ghostfolio-skill/scripts/ghostfolio.py performance
-python3 ~/.agents/skills/ghostfolio-skill/scripts/ghostfolio.py performance --range 1y
+python3 ~/.agents/skills/ghostfolio/scripts/ghostfolio.py performance
+python3 ~/.agents/skills/ghostfolio/scripts/ghostfolio.py performance --range 1y
 
 # Current holdings (sorted by value desc)
-python3 ~/.agents/skills/ghostfolio-skill/scripts/ghostfolio.py holdings
+python3 ~/.agents/skills/ghostfolio/scripts/ghostfolio.py holdings
 
 # Accounts (balance, value, transaction count)
-python3 ~/.agents/skills/ghostfolio-skill/scripts/ghostfolio.py accounts
+python3 ~/.agents/skills/ghostfolio/scripts/ghostfolio.py accounts
 
 # All activities (most recent first)
-python3 ~/.agents/skills/ghostfolio-skill/scripts/ghostfolio.py activities
+python3 ~/.agents/skills/ghostfolio/scripts/ghostfolio.py activities
 
 # Activities filtered by account name or UUID
-python3 ~/.agents/skills/ghostfolio-skill/scripts/ghostfolio.py activities --account "Bitcoin"
-python3 ~/.agents/skills/ghostfolio-skill/scripts/ghostfolio.py activities --account <account_uuid>
+python3 ~/.agents/skills/ghostfolio/scripts/ghostfolio.py activities --account "Bitcoin"
+python3 ~/.agents/skills/ghostfolio/scripts/ghostfolio.py activities --account <account_uuid>
 ```
 
 ### Write operations
 
 ```bash
 # Create a new EUR account
-python3 ~/.agents/skills/ghostfolio-skill/scripts/ghostfolio.py create-account "Account Name"
+python3 ~/.agents/skills/ghostfolio/scripts/ghostfolio.py create-account "Account Name"
 
 # Delete an activity (requires ALLOW_DELETE=true in .env)
-python3 ~/.agents/skills/ghostfolio-skill/scripts/ghostfolio.py delete-activity <activity_id>
+python3 ~/.agents/skills/ghostfolio/scripts/ghostfolio.py delete-activity <activity_id>
 ```
 
 ## Output format
