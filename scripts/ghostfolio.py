@@ -27,11 +27,12 @@ import os
 import sys
 import urllib.request
 import urllib.error
+from typing import NoReturn
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
-def _die(msg: str):
+def _die(msg: str) -> NoReturn:
     print(json.dumps({"error": msg}))
     sys.exit(1)
 
@@ -120,13 +121,14 @@ def get_portfolio_details(auth_token: str) -> dict:
 
 
 def create_account(name: str, auth_token: str) -> dict:
-    return _request("POST", "/api/v1/account", auth_token, {
+    payload = {
         "balance": 0,
         "currency": "EUR",
         "isExcluded": False,
         "name": name,
         "platformId": None,
-    })
+    }
+    return _request("POST", "/api/v1/account", auth_token, payload)
 
 
 def create_activity(activity: dict, auth_token: str) -> dict:
